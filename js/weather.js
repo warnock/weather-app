@@ -1,8 +1,8 @@
-var apiKey = require('./../env').apiKey;
+var apiKey = require('./../.env').apiKey;
 
 Weather = function() {
 
-}
+};
 
 Weather.prototype.getWeather = function(zip, humidity, temperature) {
   $.get('api.openweathermap.org/data/2.5/weather?zip=' + zip + '&appid=' + apiKey).then(function(response) {
@@ -12,6 +12,6 @@ Weather.prototype.getWeather = function(zip, humidity, temperature) {
   }).fail(function(error) {
       $('showWeather').text(error.responseJSON.message);
   });
-}
+};
 
 exports.weatherModule = Weather;
