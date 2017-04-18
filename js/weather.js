@@ -1,16 +1,13 @@
 var apiKey = require('./../.env').apiKey;
 
-Weather = function() {
-
+Weather = function(){
 };
 
-Weather.prototype.getWeather = function(zip, humidity, temperature) {
-  $.get('api.openweathermap.org/data/2.5/weather?zip=' + zip + '&appid=' + apiKey).then(function(response) {
-    console.log(response);
+Weather.prototype.getWeather = function(city, displayHumidity) {
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response) {
     displayHumidity(city, response.main.humidity);
-    displayTemperature(city, response.main.temperature);
   }).fail(function(error) {
-      $('showWeather').text(error.responseJSON.message);
+    $('.showWeather').text(error.responseJSON.message);
   });
 };
 
