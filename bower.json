@@ -1,0 +1,17 @@
+{
+  "name": "weather",
+  "description": "weather app for displaying humidity and temp for a given zip code",
+  "main": "index.js",
+  "authors": [
+    "Megan & Grace"
+  ],
+  "license": "ISC",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
